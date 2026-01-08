@@ -35,6 +35,7 @@ import logo from '@/assets/logo.png';
 const teacherNavItems = [
   { title: 'Dashboard', url: '/teacher', icon: Home },
   { title: 'My Classes', url: '/teacher/classes', icon: BookOpen },
+  { title: 'Analytics', url: '/teacher/analytics', icon: BarChart3 },
   { title: 'To Review', url: '/teacher/review', icon: ClipboardList },
   { title: 'Create Class', url: '/teacher/create-class', icon: PlusCircle },
 ];
