@@ -26,6 +26,7 @@ import {
 import TeacherClassesPage from './TeacherClassesPage';
 import TeacherReviewPage from './TeacherReviewPage';
 import TeacherCreateClassPage from './TeacherCreateClassPage';
+import TeacherAnalyticsPage from './TeacherAnalyticsPage';
 
 function TeacherOverviewPage() {
   const { token } = useAuth();
@@ -168,6 +169,7 @@ export default function TeacherDashboard() {
       <Routes>
         <Route index element={<TeacherOverviewPage />} />
         <Route path="classes" element={<TeacherClassesPage onSelectCourse={setSelectedCourse} />} />
+        <Route path="analytics" element={<TeacherAnalyticsPage />} />
         <Route path="review" element={<TeacherReviewPage />} />
         <Route path="create-class" element={<TeacherCreateClassPage />} />
       </Routes>
