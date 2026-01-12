@@ -46,10 +46,12 @@ export default function AdminCreateClassPage() {
         <p className="text-muted-foreground">Set up a new class and assign a teacher as the owner</p>
       </div>
 
-      <Alert>
-        <AlertCircle className="h-4 w-4" />
-        <AlertDescription>
-          As an administrator, you must assign a teacher as the course owner. The teacher's email is required.
+      <Alert variant="default" className="border-amber-500/50 bg-amber-50 dark:bg-amber-950/20">
+        <AlertCircle className="h-4 w-4 text-amber-600" />
+        <AlertDescription className="text-amber-800 dark:text-amber-200">
+          <strong>Important:</strong> The course owner must be a Google Workspace user in your domain. 
+          Personal Gmail accounts (e.g., @gmail.com) cannot own courses created by admins. 
+          To add external teachers, create the course first, then invite them as co-teachers from the course settings.
         </AlertDescription>
       </Alert>
 
