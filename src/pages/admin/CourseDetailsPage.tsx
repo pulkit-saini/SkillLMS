@@ -30,6 +30,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
+import { InviteCoTeacherDialog } from '@/components/classroom/InviteCoTeacherDialog';
 
 export default function CourseDetailsPage() {
   const { courseId } = useParams<{ courseId: string }>();
@@ -261,10 +262,20 @@ export default function CourseDetailsPage() {
           {/* Teachers */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <GraduationCap className="h-5 w-5" />
-                Teachers ({teachers.length})
-              </CardTitle>
+              <div className="flex items-center justify-between">
+                <CardTitle className="flex items-center gap-2">
+                  <GraduationCap className="h-5 w-5" />
+                  Teachers ({teachers.length})
+                </CardTitle>
+                {token && course && (
+                  <InviteCoTeacherDialog
+                    courseId={course.id}
+                    courseName={course.name}
+                    token={token}
+                    onSuccess={fetchCourseData}
+                  />
+                )}
+              </div>
             </CardHeader>
             <CardContent>
               {teachers.length === 0 ? (
